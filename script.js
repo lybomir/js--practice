@@ -47,27 +47,29 @@ range(5, 6);
 //min 
 
 function min(a, b, c) {
-    let minelement = a;
-   for(let i = 1; i < arguments.length; i++){
-       if(minelement < arguments[i]) {
-       } else (minelemet = arguments[i])
-   } 
-    return console.log(minelemet);
-    
+    let strMin = arguments[0];
+    for (i = 0; i < arguments.length; i++) {
+        (strMin > arguments[i]) ? strMin = arguments[i]: false;
+    }
+    return strMin;
 }
 
-min(2, 1, 6);
+console.log(min(4, 5, 8));
 
 //-------------------------------task6
 //piramid
 
-function buildStairs(n) {
-   let stairs = "";
-    for(let i =0; i < n; i++){
-        console.log(stairs+='#'\n);
+function piramid(e){
+    let stairs = '';
+    for(let i = 0; i < e; i++){
+        let backdown=((e*2)-(i*2))/2;
+        let a = ' ';
+        stairs +=' ';
+        console.log(a.repeat(backdown),stairs+='#');
     }
 }
-buildStairs(4);
+
+piramid(3);
 
 
 //--------------------------------task7
@@ -95,7 +97,7 @@ function func(str) {
 console.log(func("ironwomen olo"));
 
 
-function func(str) {
+function intensive(str) {
     let arrStr = str.split(' ');
     console.log(arrStr);
     for(let i = 0; i < arrStr.length; i++) {
@@ -106,7 +108,7 @@ function func(str) {
     return false;
 }
 
-console.log(func("hello ostap"));
+console.log(intensive("hello ostap"));
 
 
 //----------------------------tas9
@@ -147,16 +149,22 @@ console.log(removeDuplicateCharacters('baraban'));
 //---------------------------task11
 //fibonachi
 
-function fibonachi () {
-let a = 1;
-for (let i = 1;i < 11; i = i + a){
-//    debugger;
-    a+=i;
-    console.log(i +" ");
-    console.log(a +" ");
- }
+function fibonacci(n) {
+    let arrNumbers = [0, 1, 1];
+    let strFinal;
+    for (i = 0; i < n + 1; i++) {
+        if (i >= 3) {
+            arrNumbers.push(arrNumbers[i - 1] + arrNumbers[i - 2]);
+        }
+    }
+    (n === 0) ? strFinal = 'Value must be greater than "0"': strFinal = arrNumbers[n];
+
+    return strFinal;
 }
-console.log(fibonachi());
+
+console.log(fibonacci(3));
+console.log(fibonacci(5));
+console.log(fibonacci(7));
 
 
 
